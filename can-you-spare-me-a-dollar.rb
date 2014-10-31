@@ -95,7 +95,8 @@ id_friends.each do |id|
 	result = JSON.parse(Net::HTTP.post_form(URI("https://api.venmo.com/v1/payments"), params).body)
 	unless result["error"].nil?
 		error_list.push(result["error"])
-		error_num++
+		error_num += 1
+	end
 end
 
 # Check results
@@ -105,7 +106,7 @@ if error_num > 0
 	error_list.each do |e|
 		puts "#{e["message"]} (#{e["code"]})"
 	end
-	puts "Process finished with some errors (#{{id_friends.size - error_num}}/#{id_friends.size})"
+	puts "Process finished with some errors (#{id_friends.size - error_num}/#{id_friends.size})"
 else
 	puts "Charing successfully finished! (#{id_friends.size})"
 end
