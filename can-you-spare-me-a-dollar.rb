@@ -108,7 +108,7 @@ if error_num > 0
 	end
 	puts "Process finished with some errors (#{id_friends.size - error_num}/#{id_friends.size})"
 else
-	puts "Charing successfully finished! (#{id_friends.size})"
+	puts "Charging successfully finished! (#{id_friends.size})"
 end
 
 puts "Note: #{options[:note]}"
