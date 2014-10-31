@@ -19,7 +19,7 @@ Usage: ./can-you-spare-me-a-dollar.rb [-t <access_token>] [-n <message>] [-c <am
 
   -t, --token (REQUIRED)  Venmo developer access token
   -n, --note              Note for the transaction
-  -c, --charge            Amount to charge? Minus value for payment
+  -c, --charge            Amount to charge; minus value for payment
   -a, --audience          Sharing setting for the transaction
 ```
 

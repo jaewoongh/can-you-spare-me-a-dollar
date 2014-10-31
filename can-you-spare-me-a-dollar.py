@@ -16,7 +16,7 @@ def usage(message):
 	print
 	print '  -t, --token (REQUIRED)  Venmo developer access token'
 	print '  -n, --note              Note for the transaction'
-	print '  -c, --charge            Amount to charge? Minus value for payment'
+	print '  -c, --charge            Amount to charge; minus value for payment'
 	print '  -a, --audience          Sharing setting for the transaction'
 	return
 
