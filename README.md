@@ -40,7 +40,7 @@ Usage: ./can-you-spare-me-a-dollar.py
 
 Get friends' friends, but exclude direct friends. Be verbose. Ask 500 friends at most:
 ```
-./can-you-spare-me-a-dollar.py -vFd 2 -l 500
+./can-you-spare-me-a-dollar.py -vFd 2 -l 500 -t YOUR_TOKEN_HERE
 ```
 
 Getting your access token
