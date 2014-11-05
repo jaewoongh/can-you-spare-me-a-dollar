@@ -49,10 +49,6 @@ Go to Venmo website for account settings, [developers tab](https://venmo.com/acc
 There you can see your Access Token.  
 Don't ever let others know your token!
 
-Dependencies
-------------
-I believe you need to install [ruby](https://www.ruby-lang.org/en/downloads/).
-
 Disclaimer
 ----------
 If someone could get your access token, he can do anything with your account.  
