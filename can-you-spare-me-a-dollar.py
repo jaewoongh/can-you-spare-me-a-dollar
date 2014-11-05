@@ -164,8 +164,9 @@ if not should_continue.lower() in ('y', 'yes', 'yeah', 'sure', 'absolutely'):
 	print 'Okay, bye'
 	sys.exit()
 
-print
-print 'Charging everybody!'
+if verbose:
+	print
+	print 'Charging everybody!'
 
 # Charge everyone!
 error_num = 0
@@ -181,17 +182,19 @@ for f in friends:
 		error_num += 1
 	except KeyError:
 		pass
-	print f['display_name'] + ',',
+	if verbose:
+		print f['display_name'] + ',',
 	done_count += 1
 	if limit_request is not None:
 		limit_request -= 1
 		if limit_request == 0:
-			print 'and that\'s it'
-			print 'Hit the limit set'
+			if verbose:
+				print 'and that\'s it'
+				print 'Hit the limit set'
 			break
 
 # Check results
-if limit_request is None:
+if limit_request is None and verbose:
 	print 'and that\'s it'
 print
 if error_num > 0:
