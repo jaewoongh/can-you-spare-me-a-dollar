@@ -10,22 +10,38 @@ Usage
 ```
 $ git clone https://github.com/jaewoongh/can-you-spare-me-a-dollar.git
 $ cd can-you-spare-me-a-dollar/
-$ ./can-you-spare-me-a-dollar.rb -t YOUR_TOKEN_HERE
+$ ./can-you-spare-me-a-dollar.py -t YOUR_TOKEN_HERE
 ```
 
 ### Options
 ```
-Usage: ./can-you-spare-me-a-dollar.rb [-t <access_token>] [-n <message>] [-c <amount>] [-a <public|friends|private>]'
-
+Usage: ./can-you-spare-me-a-dollar.py
+       [-t <access_token>] [-n <message>] [-c <amount>]
+       [-a <public|friends|private>] [-d <number>] [-l <number>]
+       [-F] [-v]
   -t, --token (REQUIRED)  Venmo developer access token
   -n, --note              Note for the transaction
   -c, --charge            Amount to charge; minus value for payment
   -a, --audience          Sharing setting for the transaction
+  -d, --depth             If specified, get friends' friends' friends..
+  -l, --limit             Limit charging request not to exceed this number
+  -F, --no-friends        Don't charge your direct friends
+  -v, --verbose           Be verbose
+```
+```
+*Default note:       "Can you spare me a dollar?"  
+*Default charge:     A dollar  
+*Default audience:   According to your Venmo settings  
+*Default depth:      1  
+*Default limit:      None  
+*Default no-friends: false  
+*Default verbose:    false
 ```
 
-*Default note: "Can you spare me a dollar?"  
-*Default charge: A dollar  
-*Default audience: According to your Venmo settings  
+Get friends' friends, but exclude direct friends. Be verbose. Ask 500 friends at most:
+```
+./can-you-spare-me-a-dollar.py -vFd 2 -l 500
+```
 
 Getting your access token
 -------------------------
@@ -43,7 +59,8 @@ If someone could get your access token, he can do anything with your account.
 So keep it as your own, and use this at your own risk.  
 It's just using Venmo API, nothing's bad or dangerous though.
 
-Was thinking of making this as a web service, but I didn't want anybody submit his access token online.
+Also, please take your own risk for massive requests.  
+It's apparently not a desirable usage of the API when you do that.
 
 Where this came from
 -----------------------
@@ -52,10 +69,3 @@ This project is done as a weekly assignment for the class Appropriating Interact
 ```
 Creatively misuse an existing API in order to reveal something about the service.
 ```
-
-It'd be really awesome and dangerous if I could actually grab some random strangers' Venmo ID and ask them a dollar.
-
-One last note
--------------
-Originally written in python, but for independency regarding http requests, I've rewrote the code in ruby.  
-Both scripts do the exact same thing, but you need `requests` module for python version.
