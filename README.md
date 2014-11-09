@@ -63,9 +63,7 @@ Where this came from
 -----------------------
 This project is done as a weekly assignment for the class Appropriating Interaction Technoligies by Kyle McDonald and Lauren McCarthy @ITP, Tisch School of the Arts, NYU.
 
-```
-Creatively misuse an existing API in order to reveal something about the service.
-```
+> "Creatively misuse an existing API in order to reveal something about the service."
 
 Ruby vs. Python
 ---------------
