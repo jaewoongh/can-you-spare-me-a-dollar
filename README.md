@@ -10,12 +10,12 @@ Usage
 ```
 $ git clone https://github.com/jaewoongh/can-you-spare-me-a-dollar.git
 $ cd can-you-spare-me-a-dollar/
-$ ./can-you-spare-me-a-dollar.py -t YOUR_TOKEN_HERE
+$ ./can-you-spare-me-a-dollar.rb -t YOUR_TOKEN_HERE
 ```
 
 ### Options
 ```
-Usage: ./can-you-spare-me-a-dollar.py
+Usage: ./can-you-spare-me-a-dollar.rb
        [-t <access_token>] [-n <message>] [-c <amount>]
        [-a <public|friends|private>] [-d <number>] [-l <number>]
        [-F] [-v]
@@ -40,8 +40,9 @@ Usage: ./can-you-spare-me-a-dollar.py
 
 Get friends' friends, but exclude direct friends. Be verbose. Ask 500 friends at most:
 ```
-./can-you-spare-me-a-dollar.py -vFd 2 -l 500 -t YOUR_TOKEN_HERE
+./can-you-spare-me-a-dollar.rb -vFd 2 -l 500 -t YOUR_TOKEN_HERE
 ```
+*Giving depth a value more than 1 may result in crazy number of people, even with only 2.
 
 Getting your access token
 -------------------------
@@ -65,3 +66,8 @@ This project is done as a weekly assignment for the class Appropriating Interact
 ```
 Creatively misuse an existing API in order to reveal something about the service.
 ```
+
+Ruby vs. Python
+---------------
+Originally written in python, but both scripts do the exact same thing.  
+If you use python script instead of ruby one though, you'll need [requests](http://docs.python-requests.org/en/latest/user/install/) module for python.
