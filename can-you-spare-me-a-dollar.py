@@ -3,11 +3,8 @@
 import sys
 from sys import argv
 import getopt
-
 from collections import Counter
-
 import requests
-
 
 # Usage manual
 def usage(message):
@@ -203,7 +200,7 @@ if error_num > 0:
 	for e in error_list:
 		print e['message'] + ' (' + str(e['code']) + ')'
 	print
-	print 'Process finished with some errors (' + str(done_count - len(error_list)) + '/' + str(done_count) + ')'
+	print 'Process finished with some errors (' + str(done_count - error_num) + '/' + str(done_count) + ')'
 else:
 	print 'Charging successfully finished! (' + str(done_count) + ')'
 
